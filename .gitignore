@@ -1,5 +1,6 @@
-/src/.vs/
+/src/.vs
 /src/**/bin
 /src/**/obj
 /src/packages/**
 *.user
+/installer/Output
