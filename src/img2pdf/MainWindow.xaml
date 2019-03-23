@@ -1,0 +1,48 @@
+﻿<Window x:Class="img2pdf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:img2pdf"
+        mc:Ignorable="d"
+        Title="img2pdf" Height="400" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid ShowGridLines="false" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="24"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Imagens (caminhos):" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" />
+        <TextBox Name="txbSource" Grid.Column="0" Grid.Row="1" IsReadOnly="True" />
+        <Button Name="btnSource" Grid.Column="1" Grid.Row="1" Click="BtnSource_Click">
+            <TextBlock>...</TextBlock>
+        </Button>
+        <TextBlock Text="Salvar como (.pdf):" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" />
+        <TextBox Name="txbTarget" Grid.Column="0" Grid.Row="3" />
+        <Button Name="btnTarget" Grid.Column="1" Grid.Row="3" Height="30" VerticalAlignment="Top" Click="BtnTarget_Click">
+            <TextBlock>...</TextBlock>
+        </Button>
+        <TextBlock Text="Orientação:" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" />
+        <StackPanel Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type RadioButton}">
+                    <Setter Property="Margin" Value="0,0,5,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <RadioButton Name="rbA4Portrait" GroupName="Orientation" Content="Retrato A4" IsChecked="True" />
+            <RadioButton Name="rbA4Landscape" GroupName="Orientation" Content="Paisagem A4" />
+        </StackPanel>
+        <Button Name="btnConvert" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Click="BtnConvert_Click">
+            <TextBlock>Converter</TextBlock>
+        </Button>
+    </Grid>
+</Window>
