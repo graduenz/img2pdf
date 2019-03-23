@@ -1,2 +1,2 @@
 # img2pdf
-My own tool to convert images to PDF
+WPF tool to convert images to PDF
